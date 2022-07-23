@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-	package="com.rkapp.fakechat" >
+<manifest xmlns:android = "http://schemas.android.com/apk/res/android"
+		  xmlns:tools = "http://schemas.android.com/tools"
+		  package = "com.rkapp.fakechat" >
 
-    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name = "android.permission.INTERNET" />
 
-    <application
-        tools:targetApi="31"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:theme="@style/Theme.FakeChat"
-        android:fullBackupContent="@xml/backup_rules"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:dataExtractionRules="@xml/data_extraction_rules" >
+	<uses-permission android:name = "android.permission.CHANGE_NETWORK_STATE"/>
 
-        <activity android:name=".activities.Chat" android:exported="false" />
+	<application
+		android:allowBackup = "true"
+		android:dataExtractionRules = "@xml/data_extraction_rules"
+		android:fullBackupContent = "@xml/backup_rules"
+		android:icon = "@mipmap/ic_launcher"
+		android:label = "@string/app_name"
+		android:roundIcon = "@mipmap/ic_launcher_round"
+		android:supportsRtl = "true"
+		android:theme = "@style/Theme.FakeChat"
+		tools:targetApi = "31" >
+		<activity
+			android:name = ".activities.Control"
+			android:exported = "false" />
+		<activity
+			android:name = ".activities.Chat"
+			android:exported = "false" />
+		<activity
+			android:name = ".activities.Create"
+			android:exported = "false" />
+		<activity
+			android:name = ".activities.Splash"
+			android:exported = "true" >
+			<intent-filter >
+				<action android:name = "android.intent.action.MAIN" />
 
-        <activity android:name=".activities.Create" android:exported="false" />
+				<category android:name = "android.intent.category.LAUNCHER" />
+			</intent-filter >
+		</activity >
+		<activity
+			android:name = ".activities.Enter"
+			android:exported = "false"
+			android:launchMode = "singleTask" />
+		<activity
+			android:name = ".activities.Main"
+			android:exported = "false" />
+	</application >
 
-        <activity android:name=".activities.Splash" android:exported="true" >
-
-            <intent-filter>
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-
-            </intent-filter>
-
-        </activity>
-
-        <activity android:name=".activities.Enter" android:exported="false" android:launchMode="singleTask" />
-
-        <activity android:name=".activities.Main" android:exported="false" />
-
-    </application>
-
-</manifest>
+</manifest >

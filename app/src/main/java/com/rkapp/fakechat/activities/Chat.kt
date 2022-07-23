@@ -1,5 +1,6 @@
 package com.rkapp.fakechat.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -9,6 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.rkapp.fakechat.adapter.ChatAdapter
+import com.rkapp.fakechat.control.Connected
 import com.rkapp.fakechat.databinding.ActivityChatBinding
 import com.rkapp.fakechat.eventbus.UserInfo
 import com.rkapp.fakechat.viewmodels.ChatViewModel
@@ -27,6 +29,13 @@ class Chat : AppCompatActivity ( ) {
         binding = ActivityChatBinding.inflate ( layoutInflater )
 
         setContentView ( binding.root )
+
+        val network = Connected ( ).network ( this )
+
+        if ( !network ) {
+
+            startActivity ( Intent ( this , Control::class.java ) )
+        }
 
         EventBus.getDefault ( ).register (this )
 

@@ -6,6 +6,7 @@ import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.rkapp.fakechat.control.Connected
 import com.rkapp.fakechat.databinding.ActivitySplashBinding
 
 class Splash : AppCompatActivity() {
@@ -20,26 +21,37 @@ class Splash : AppCompatActivity() {
 
         val user = Firebase.auth.currentUser
 
-        if (user != null) {
+        val network = Connected ( ).network ( this )
 
-            startActivity(Intent(this, Main::class.java))
+        if ( network ) {
 
-            finish()
+            if ( user != null ) {
+
+                startActivity ( Intent (this , Main::class.java ) )
+
+                finish ( )
+
+            } else {
+
+                object : CountDownTimer (1000 , 1000 ) {
+
+                    override fun onTick ( millisUntilFinished : Long ) { }
+
+                    override fun onFinish ( ) {
+
+                        startActivity ( Intent (this@Splash , Enter::class.java ) )
+
+                        finish ( )
+                    }
+
+                }.start ( )
+            }
 
         } else {
 
-            object : CountDownTimer(2000, 1000) {
+            startActivity ( Intent (this , Control::class.java ) )
 
-                override fun onTick(millisUntilFinished: Long) {}
-
-                override fun onFinish() {
-
-                    startActivity(Intent(this@Splash, Enter::class.java))
-
-                    finish()
-                }
-
-            }.start()
+            finish ( )
         }
     }
 }
