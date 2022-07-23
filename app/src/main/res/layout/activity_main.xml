@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto"
+	xmlns:tools = "http://schemas.android.com/tools"
+	android:layout_width = "match_parent"
+	android:layout_height = "match_parent"
+	android:background="@color/black"
+	android:orientation = "vertical"
+	tools:context = ".activities.Main" >
+
+	<com.google.android.material.appbar.MaterialToolbar
+		android:layout_width = "match_parent"
+		android:layout_height = "wrap_content"
+		android:background="@color/first_color"
+		app:contentInsetStart ="0dp" >
+
+		<LinearLayout
+			android:layout_width = "match_parent"
+			android:layout_height = "match_parent"
+			android:orientation="vertical" >
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id = "@+id/profile"
+				android:layout_width = "70dp"
+				android:layout_height = "70dp"
+				android:padding = "10dp" />
+
+			<com.google.android.material.tabs.TabLayout
+				android:id = "@+id/tabs"
+				android:layout_width = "match_parent"
+				android:layout_height = "wrap_content"
+				android:background="@color/first_color"
+				app:tabIndicatorColor = "@color/second_color"
+				app:tabTextColor = "@color/second_color" />
+
+		</LinearLayout>
+
+	</com.google.android.material.appbar.MaterialToolbar>
+
+	<androidx.viewpager2.widget.ViewPager2
+		android:id = "@+id/pages"
+		android:layout_width = "match_parent"
+		android:layout_height = "match_parent"
+		android:layout_marginTop = "1.5dp" />
+
+</LinearLayout >

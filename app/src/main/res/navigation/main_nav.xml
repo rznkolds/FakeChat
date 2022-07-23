@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+	xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto"
+	xmlns:tools = "http://schemas.android.com/tools"
+	android:id = "@+id/main_nav"
+	app:startDestination = "@id/navigation_friends" >
+
+	<fragment
+		android:id = "@+id/navigation_friends"
+		android:name = "com.rkapp.fakechat.pieces.Friends"
+		android:label = "fragment_friends"
+		tools:layout = "@layout/fragment_friends" >
+
+		<action
+			android:id = "@+id/action_friends_to_search"
+			app:destination = "@id/navigation_search" />
+
+		<action
+			android:id = "@+id/action_friends_to_notification"
+			app:destination = "@id/navigation_notification" />
+
+	</fragment >
+
+	<fragment
+		android:id = "@+id/navigation_search"
+		android:name = "com.rkapp.fakechat.pieces.Search"
+		android:label = "fragment_search"
+		tools:layout = "@layout/fragment_search" />
+
+	<fragment
+		android:id = "@+id/navigation_notification"
+		android:name = "com.rkapp.fakechat.pieces.Notification"
+		android:label = "fragment_notification"
+		tools:layout = "@layout/fragment_notification" />
+
+</navigation >

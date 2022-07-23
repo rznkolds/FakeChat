@@ -1,0 +1,13 @@
+<resources >
+	<string name = "app_name" >Fake Chat</string >
+	<string name = "password" >Password</string >
+	<string name = "create_new_account" >Create New Account</string >
+	<string name = "user_id" >Kullanıcı Adı</string >
+	<string name = "e_mail" >E-mail</string >
+	<string name = "create" >Create</string >
+	<string name = "log_in" >LOG IN</string >
+	<string name = "welcome" >WELCOME</string >
+	<string name = "create_register" >Do you have an acoount ? Register</string >
+	<string name = "search" >Search</string >
+	<string name = "notification" >Notification</string >
+</resources >

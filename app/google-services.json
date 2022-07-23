@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "387427814257",
+    "firebase_url": "https://fakechat-9013-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fakechat-9013",
+    "storage_bucket": "fakechat-9013.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387427814257:android:9eb5890242f2a943e304d0",
+        "android_client_info": {
+          "package_name": "com.rkapp.fakechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387427814257-d3eoftbc4ag36reobb5ravu9nkqkcrnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2HUShCT7-h1eMm6gwySTZi0jG0WzIL1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387427814257-d3eoftbc4ag36reobb5ravu9nkqkcrnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
