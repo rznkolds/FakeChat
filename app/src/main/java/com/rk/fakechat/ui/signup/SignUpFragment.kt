@@ -25,17 +25,14 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.pictureProfile.setOnClickListener {
-
             intent()
         }
 
         binding.pictureAdd.setOnClickListener {
-
             intent()
         }
 
         binding.signUp.setOnClickListener {
-
             register()
         }
 
@@ -67,17 +64,16 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     }
 
     private fun intent() = Intent(Intent.ACTION_GET_CONTENT).apply {
-
         type = "image/*"
         register.launch(this)
     }
 
-    private val register = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-
-        if (it.resultCode == Activity.RESULT_OK) {
-            picture = it.data?.data
-            binding.pictureProfile.setPicture(it.data?.data.toString())
-            binding.pictureAdd.visibility = View.INVISIBLE
+    private val register =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                picture = it.data?.data
+                binding.pictureProfile.setPicture(it.data?.data.toString())
+                binding.pictureAdd.visibility = View.INVISIBLE
+            }
         }
-    }
 }

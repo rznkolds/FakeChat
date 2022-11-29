@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rk.fakechat.R
-import com.rk.fakechat.common.PagerAdapter
 import com.rk.fakechat.common.setPicture
 import com.rk.fakechat.common.viewBinding
 import com.rk.fakechat.databinding.FragmentHomeBinding

@@ -1,7 +1,6 @@
 package com.rk.fakechat.ui.search
 
 import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -10,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rk.fakechat.R
 import com.rk.fakechat.common.viewBinding
-import com.rk.fakechat.data.model.User
 import com.rk.fakechat.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
@@ -41,7 +39,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
     }
 
     private fun hideKeyboard() {
-        val imm: InputMethodManager = requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(binding.search.windowToken, 0)
+        val manager = requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        manager.hideSoftInputFromWindow(binding.search.windowToken, 0)
     }
 }

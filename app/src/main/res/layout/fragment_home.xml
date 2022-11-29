@@ -27,6 +27,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_profile"
+        android:background="@color/dark_background"
         app:tabIndicatorColor="@color/second_color"
         app:tabTextColor="@color/second_color" />
 

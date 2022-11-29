@@ -1,6 +1,5 @@
 package com.rk.fakechat.ui.friends
 
-
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rk.fakechat.R
 import com.rk.fakechat.common.viewBinding
 import com.rk.fakechat.databinding.FragmentFriendsBinding
-
 
 class FriendsFragment : Fragment(R.layout.fragment_friends) {
 
@@ -38,12 +36,9 @@ class FriendsFragment : Fragment(R.layout.fragment_friends) {
         initObservers()
     }
 
-    private fun initObservers() = with(binding) {
-
-        viewModel.user.observe(viewLifecycleOwner) {
-            friends.layoutManager = LinearLayoutManager(requireContext())
-            friends.adapter = adapter
-            adapter.setData(it)
-        }
+    private fun initObservers() = viewModel.user.observe(viewLifecycleOwner) {
+        binding.friends.layoutManager = LinearLayoutManager(requireContext())
+        binding.friends.adapter = adapter
+        adapter.setData(it)
     }
 }

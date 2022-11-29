@@ -1,6 +1,7 @@
 package com.rk.fakechat.data.repository
 
 import android.net.Uri
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -134,8 +135,8 @@ class MemberRepo {
 
                     val model = User(
                         i.child("id").value.toString(),
-                        i.child("uid").value.toString(),
                         i.child("email").value.toString(),
+                        i.child("uid").value.toString(),
                         i.child("picture_url").value.toString(),
                     )
 
@@ -201,6 +202,8 @@ class MemberRepo {
     }
 
     fun decline(user: User) {
+
+        Log.d("uid: ", user.uid)
 
         db.child("Users").child(auth.uid.toString()).child("Notification")
             .child(user.uid)

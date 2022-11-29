@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.rk.fakechat.R
-import com.rk.fakechat.common.setPicture
 import com.rk.fakechat.common.showToast
 import com.rk.fakechat.common.viewBinding
 import com.rk.fakechat.databinding.FragmentSignInBinding
@@ -20,25 +19,21 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.login.setOnClickListener {
-
             login()
         }
 
         binding.goSignUp.setOnClickListener {
-
             findNavController().navigate(
                 SignInFragmentDirections.actionSignInToSignUp()
             )
         }
-
         initObservers()
     }
 
     private fun initObservers() {
 
         viewModel.result.observe(viewLifecycleOwner) {
-
-            if (it){
+            if (it) {
                 findNavController().navigate(
                     SignInFragmentDirections.actionSignInToHome()
                 )
@@ -52,5 +47,6 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         }
     }
 
-    private fun login() = viewModel.login(binding.signInEmail.text.toString(), binding.signInPassword.text.toString())
+    private fun login() =
+        viewModel.login(binding.signInEmail.text.toString(), binding.signInPassword.text.toString())
 }

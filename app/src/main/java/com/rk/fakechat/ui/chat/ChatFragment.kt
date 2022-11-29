@@ -27,7 +27,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         val uid = arguments?.getString("uid")
         val picture = arguments?.getString("picture")
 
-        with(binding){
+        with(binding) {
 
             chatProfile.setPicture(picture.toString())
             chatName.text = id
@@ -35,9 +35,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
             send.setOnClickListener {
                 val sender = uid + auth
                 val receiver = auth + uid
-
                 viewModel.sendMessage(sender , receiver , message.text.toString ( ))
-
                 message.text.clear()
             }
         }
