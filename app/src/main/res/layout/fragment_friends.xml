@@ -5,8 +5,7 @@
     android:id = "@+id/dmenu"
     android:layout_width = "match_parent"
     android:layout_height = "match_parent"
-    android:background="@color/first_color"
-    tools:context = ".pieces.Friends" >
+    tools:context = ".ui.friends.FriendsFragment" >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id = "@+id/friends"

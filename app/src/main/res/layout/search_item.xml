@@ -3,8 +3,7 @@
 	xmlns:android = "http://schemas.android.com/apk/res/android"
 	xmlns:app = "http://schemas.android.com/apk/res-auto"
 	android:layout_width = "match_parent"
-	android:layout_height = "70dp"
-	android:background="@color/first_color">
+	android:layout_height = "70dp">
 
 	<de.hdodenhof.circleimageview.CircleImageView
 		android:id = "@+id/search_profile"
@@ -27,19 +26,19 @@
 		app:layout_constraintTop_toTopOf = "parent" />
 
 	<ImageView
-		android:id = "@+id/add"
-		android:layout_width = "60dp"
-		android:layout_height = "60dp"
-		android:layout_alignParentTop = "true"
-		android:layout_alignParentEnd = "true"
-		android:layout_alignParentBottom = "true"
-		android:layout_centerVertical = "true"
-		android:layout_margin = "5dp"
-		android:background = "@drawable/button"
-		android:padding = "17dp"
-		app:layout_constraintBottom_toBottomOf = "parent"
-		app:layout_constraintEnd_toEndOf = "parent"
-		app:layout_constraintTop_toTopOf = "parent"
-		app:srcCompat = "@drawable/add" />
+		android:id="@+id/add"
+		android:layout_width="40dp"
+		android:layout_height="40dp"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentBottom="true"
+		android:layout_centerVertical="true"
+		android:layout_marginEnd="15dp"
+		android:background="@drawable/button"
+		android:padding="9dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@drawable/add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout >

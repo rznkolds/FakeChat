@@ -9,7 +9,7 @@
 	<color name = "white" >#FFFFFFFF</color >
 	<color name = "edit_color">#2F4450</color>
 	<color name = "text_color">#72818A</color>
-	<color name = "first_color">#1A2732</color>
+	<color name = "dark_background">#1A2732</color>
 	<color name = "second_color">#78AEE6</color>
 	<color name = "send_color">#0076F0</color>
 	<color name = "receiver_color">#FF5722</color>

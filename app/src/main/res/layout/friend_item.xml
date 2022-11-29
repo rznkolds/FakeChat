@@ -6,7 +6,7 @@
 	android:layout_height = "70dp" >
 
 	<de.hdodenhof.circleimageview.CircleImageView
-		android:id = "@+id/profile"
+		android:id = "@+id/friend_profile"
 		android:layout_width = "70dp"
 		android:layout_height = "70dp"
 		android:layout_centerInParent = "true"
@@ -16,14 +16,14 @@
 		app:layout_constraintTop_toTopOf = "parent" />
 
 	<TextView
-		android:id = "@+id/name"
+		android:id = "@+id/friend_name"
 		android:layout_width = "wrap_content"
 		android:layout_height = "wrap_content"
 		android:layout_marginStart = "10dp"
 		android:textColor = "@color/white"
 		android:textSize = "18sp"
 		app:layout_constraintBottom_toBottomOf = "parent"
-		app:layout_constraintStart_toEndOf = "@+id/profile"
+		app:layout_constraintStart_toEndOf = "@+id/friend_profile"
 		app:layout_constraintTop_toTopOf = "parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout >
