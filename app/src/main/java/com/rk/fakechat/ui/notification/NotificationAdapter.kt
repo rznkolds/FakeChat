@@ -22,17 +22,25 @@ class NotificationAdapter : RecyclerView.Adapter<NotificationAdapter.AdapterHold
 
     inner class AdapterHolder(val binding: WantItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(user: User) = with(binding) {
+        fun bind(user: User , position: Int) = with(binding) {
 
             notificationName.text = user.id
             notificationProfile.setPicture(user.picture_url)
 
             accept.setOnClickListener {
                 onAcceptClick(user)
+
+                list.removeAt(position)
+                notifyItemRemoved(position)
+                notifyItemRangeChanged(position, list.size)
             }
 
             decline.setOnClickListener {
                 onDeclineClick(user)
+
+                list.removeAt(position)
+                notifyItemRemoved(position)
+                notifyItemRangeChanged(position, list.size)
             }
         }
     }
@@ -46,7 +54,7 @@ class NotificationAdapter : RecyclerView.Adapter<NotificationAdapter.AdapterHold
         )
     }
 
-    override fun onBindViewHolder(holder: AdapterHolder, position: Int) = holder.bind(list[position])
+    override fun onBindViewHolder(holder: AdapterHolder, position: Int) = holder.bind(list[position],position)
 
     override fun getItemCount(): Int = list.size
 

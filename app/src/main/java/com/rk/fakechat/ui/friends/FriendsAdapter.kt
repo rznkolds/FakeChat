@@ -22,7 +22,6 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.AdapterHolder>() {
             friendName.text = user.id
 
             itemView.setOnClickListener {
-
                 onFriendClick(user)
             }
         }

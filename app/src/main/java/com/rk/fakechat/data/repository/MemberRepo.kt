@@ -216,8 +216,7 @@ class MemberRepo {
 
         val temp = ArrayList<Message>()
 
-        db.child("Chats").child(sender).child("messages")
-            .addValueEventListener(object : ValueEventListener {
+        db.child("Chats").child(sender).child("messages").addValueEventListener(object : ValueEventListener {
 
                 override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -240,10 +239,9 @@ class MemberRepo {
 
         val message = Message(msg, auth.uid.toString())
 
-        db.child("Chats").child(sender).child("messages").push().setValue(message)
-            .addOnSuccessListener {
+        db.child("Chats").child(sender).child("messages").push().setValue(message).addOnSuccessListener {
 
-                db.child("Chats").child(receiver).child("messages").push().setValue(message)
-            }
+            db.child("Chats").child(receiver).child("messages").push().setValue(message)
+        }
     }
 }
